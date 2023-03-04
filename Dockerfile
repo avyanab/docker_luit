@@ -7,6 +7,5 @@ RUN apt-get install -y python3-pip && pip3 install boto3
 
 WORKDIR /project_dir
 
-COPY . /project_dir
-
-CMD [ "python", "./hello_world.py" ]
+# Will keep containers running
+ENTRYPOINT ["tail", "-f", "/dev/null"]
